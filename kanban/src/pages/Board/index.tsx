@@ -1,19 +1,19 @@
-import { useKanban } from '@/stores/useKanban'
-import { Button } from '@/components/ui/button'
-
-export const Board =() => {
-  const { boards, createBoard } = useKanban()
+import { useKanban } from "@/stores/useKanban";
+import { Button } from "@/components/ui/button";
+import { Board } from "@/components/Board";
+export const BoardPage = () => {
+  const { boards, createBoard } = useKanban();
   return (
-    <> 
-    <div>
-      <h1>{boards.map((board) => board.name).join(', ')}</h1>
-    </div>
-      <Button onClick={() => createBoard({ id: `${boards.length}`, name: '新版' })}>
-        Create Board
+    <div className="bg-amber-200">
+      <Board />
+      <Button
+        variant="default"
+        onClick={() => {
+          createBoard({ id: `${boards.length}`, name: "新板" });
+        }}
+      >
+        创建
       </Button>
-    </>
-   
-  )
-}
-
-export default Board
+    </div>
+  );
+};

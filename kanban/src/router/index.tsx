@@ -1,6 +1,5 @@
-/* eslint-disable react-refresh/only-export-components */
 import { createBrowserRouter } from 'react-router-dom'
-import Board from '@/pages/Board'
+import { BoardPage } from '@/pages/Board'
 
 const routers = [
   {
@@ -9,7 +8,7 @@ const routers = [
   },
   {
     path: '/board',
-    element: <Board />,
+    element: <BoardPage />,
   },
 ]
 
